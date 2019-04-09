@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Файли-->
+        <scene sceneID="jlX-Qb-CiZ">
+            <objects>
+                <viewController storyboardIdentifier="PDFListViewController" id="PrN-pn-wHD" customClass="PDFListViewController" customModule="Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LEn-9H-hfU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aga-z6-35Z">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PDFListTableViewCell" textLabel="jdl-NY-zKD" rowHeight="80" style="IBUITableViewCellStyleDefault" id="veQ-wb-GoL" customClass="PDFListTableViewCell" customModule="Scanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="veQ-wb-GoL" id="w79-UQ-tsG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jdl-NY-zKD">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="79.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Aga-z6-35Z" firstAttribute="leading" secondItem="lRb-Y3-6XF" secondAttribute="leading" id="8lJ-SI-NJr"/>
+                            <constraint firstItem="lRb-Y3-6XF" firstAttribute="bottom" secondItem="Aga-z6-35Z" secondAttribute="bottom" id="BrA-Tn-55e"/>
+                            <constraint firstItem="lRb-Y3-6XF" firstAttribute="trailing" secondItem="Aga-z6-35Z" secondAttribute="trailing" id="Ib1-Qs-haI"/>
+                            <constraint firstItem="Aga-z6-35Z" firstAttribute="top" secondItem="lRb-Y3-6XF" secondAttribute="top" id="l9W-43-x54"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lRb-Y3-6XF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Файли" id="Rq0-pF-4Sa"/>
+                    <connections>
+                        <outlet property="tableView" destination="Aga-z6-35Z" id="CB2-ex-rcl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6f-NM-65w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="73.660714285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rhf-z8-HVv">
+            <objects>
+                <navigationController storyboardIdentifier="PDFListNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="IlA-Zt-UXz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ude-Al-dDD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PrN-pn-wHD" kind="relationship" relationship="rootViewController" id="4ei-qf-kDB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VXB-Zl-j0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="73.660714285714278"/>
+        </scene>
+    </scenes>
+</document>

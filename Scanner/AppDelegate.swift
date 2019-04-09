@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import CoreMotion
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    static var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        createRootDirectory()
+        configureRootViewController()
         return true
     }
 
@@ -41,6 +48,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    private func configureRootViewController() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        if let rootViewController = window?.rootViewController {
+            rootViewController.dismiss(animated: false, completion: nil)
+        }
+        window?.rootViewController = WelcomeViewController.instantiateNavigation()
+        window?.makeKeyAndVisible()
+    }
+    
+    private func createRootDirectory() {
+        let documentsDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let filePath = (documentsDirectory as NSString).appendingPathComponent("Scanner/") as String
+        do {
+            try FileManager.default.createDirectory(atPath: filePath, withIntermediateDirectories: true, attributes: nil)
+        } catch let error as NSError {
+            print("Unable to create directory \(error.debugDescription)")
+        }
+    }
+    
 }
 
