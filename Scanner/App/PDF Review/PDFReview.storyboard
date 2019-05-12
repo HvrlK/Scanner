@@ -12,7 +12,7 @@
         <!--Review View Controller-->
         <scene sceneID="gEG-SR-FoP">
             <objects>
-                <viewController storyboardIdentifier="PDFReviewViewController" id="T3b-mr-VVg" customClass="PDFReviewViewController" customModule="Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PDFReviewViewController" extendedLayoutIncludesOpaqueBars="YES" id="T3b-mr-VVg" customClass="PDFReviewViewController" customModule="Scanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ip-DH-MDq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

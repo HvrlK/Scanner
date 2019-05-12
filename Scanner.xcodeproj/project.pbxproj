@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD841D8C228831C20038BCF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD841D8B228831C20038BCF9 /* Assets.xcassets */; };
 		DD8C659C2259DDE400DA1080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8C659B2259DDE400DA1080 /* AppDelegate.swift */; };
-		DD8C65A32259DDE500DA1080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8C65A22259DDE500DA1080 /* Assets.xcassets */; };
 		DD8C65A62259DDE500DA1080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8C65A42259DDE500DA1080 /* LaunchScreen.storyboard */; };
 		DD8C66172259DE8300DA1080 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8C66162259DE8300DA1080 /* Welcome.storyboard */; };
 		DD8C66192259DE9F00DA1080 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8C66182259DE9F00DA1080 /* WelcomeViewController.swift */; };
@@ -77,6 +77,7 @@
 		DDA5DEDC225A2E0000B379EE /* PDFListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA5DEDB225A2E0000B379EE /* PDFListViewModel.swift */; };
 		DDA5DEDE225A2E1600B379EE /* PDFList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA5DEDD225A2E1600B379EE /* PDFList.storyboard */; };
 		DDA5DEE2225A33A700B379EE /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA5DEE1225A33A700B379EE /* UITableView+Extensions.swift */; };
+		DDC641F422881682000368E0 /* AppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC641F322881682000368E0 /* AppearanceConfigurator.swift */; };
 		EBC55835B7BF8E1485782ED3 /* Pods_Scanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9D34E29EC31C8E588BA1BB /* Pods_Scanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,9 +85,9 @@
 		0C9D34E29EC31C8E588BA1BB /* Pods_Scanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		217C0DB7AE2661B5F068C008 /* Pods-Scanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scanner.debug.xcconfig"; path = "Target Support Files/Pods-Scanner/Pods-Scanner.debug.xcconfig"; sourceTree = "<group>"; };
 		C5EDEA8481E4DBA3E99D5B16 /* Pods-Scanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scanner.release.xcconfig"; path = "Target Support Files/Pods-Scanner/Pods-Scanner.release.xcconfig"; sourceTree = "<group>"; };
+		DD841D8B228831C20038BCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Scanner/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		DD8C65982259DDE400DA1080 /* Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD8C659B2259DDE400DA1080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD8C65A22259DDE500DA1080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD8C65A52259DDE500DA1080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD8C65A72259DDE500DA1080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD8C66162259DE8300DA1080 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
@@ -158,6 +159,7 @@
 		DDA5DEDB225A2E0000B379EE /* PDFListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFListViewModel.swift; sourceTree = "<group>"; };
 		DDA5DEDD225A2E1600B379EE /* PDFList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PDFList.storyboard; sourceTree = "<group>"; };
 		DDA5DEE1225A33A700B379EE /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		DDC641F322881682000368E0 /* AppearanceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +216,7 @@
 				DD8C661C2259DECF00DA1080 /* Common */,
 				DD8C66142259DE1F00DA1080 /* App */,
 				DD8C659B2259DDE400DA1080 /* AppDelegate.swift */,
-				DD8C65A22259DDE500DA1080 /* Assets.xcassets */,
+				DD841D8B228831C20038BCF9 /* Assets.xcassets */,
 				DD8C65A42259DDE500DA1080 /* LaunchScreen.storyboard */,
 				DD8C65A72259DDE500DA1080 /* Info.plist */,
 			);
@@ -247,6 +249,7 @@
 			children = (
 				DD8C661D2259DEE200DA1080 /* ViewModel.swift */,
 				DD8C661F2259DF3500DA1080 /* BaseViewController.swift */,
+				DDC641F322881682000368E0 /* AppearanceConfigurator.swift */,
 				DD8C66332259E63900DA1080 /* Util */,
 				DD8C66212259DF6700DA1080 /* Extensions */,
 			);
@@ -500,6 +503,7 @@
 				DD8C66972259F4FC00DA1080 /* rotate@3x.png in Resources */,
 				DD8C66992259F4FC00DA1080 /* rotate@2x.png in Resources */,
 				DD8C66962259F4FC00DA1080 /* flash.png in Resources */,
+				DD841D8C228831C20038BCF9 /* Assets.xcassets in Resources */,
 				DD8C667E2259F4FC00DA1080 /* Localizable.strings in Resources */,
 				DD8C65A62259DDE500DA1080 /* LaunchScreen.storyboard in Resources */,
 				DD8C669C2259F4FC00DA1080 /* flashUnavailable.png in Resources */,
@@ -515,7 +519,6 @@
 				DD8C66A12259F4FC00DA1080 /* enhance.png in Resources */,
 				DD8C66A02259F4FC00DA1080 /* enhance@2x.png in Resources */,
 				DD8C663E2259E90B00DA1080 /* CreatePDF.storyboard in Resources */,
-				DD8C65A32259DDE500DA1080 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +596,7 @@
 				DD8C66882259F4FC00DA1080 /* CGAffineTransform+Utils.swift in Sources */,
 				DDA5DED3225A284E00B379EE /* PDFReviewViewController.swift in Sources */,
 				DD8C66842259F4FC00DA1080 /* ScannerViewController.swift in Sources */,
+				DDC641F422881682000368E0 /* AppearanceConfigurator.swift in Sources */,
 				DD8C66192259DE9F00DA1080 /* WelcomeViewController.swift in Sources */,
 				DDA5DED7225A28CB00B379EE /* PDFReviewViewModel.swift in Sources */,
 				DDA5DEDA225A2DE200B379EE /* PDFListViewController.swift in Sources */,
@@ -663,6 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -724,6 +729,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -780,16 +786,18 @@
 			baseConfigurationReference = 217C0DB7AE2661B5F068C008 /* Pods-Scanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2SWL59DHLX;
+				DEVELOPMENT_TEAM = 3C2LDXL8T5;
 				INFOPLIST_FILE = Scanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hvrlk.Scanner;
+				PRODUCT_BUNDLE_IDENTIFIER = HvrlK.scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -800,16 +808,18 @@
 			baseConfigurationReference = C5EDEA8481E4DBA3E99D5B16 /* Pods-Scanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2SWL59DHLX;
+				DEVELOPMENT_TEAM = 3C2LDXL8T5;
 				INFOPLIST_FILE = Scanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hvrlk.Scanner;
+				PRODUCT_BUNDLE_IDENTIFIER = HvrlK.scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

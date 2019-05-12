@@ -12,13 +12,13 @@
         <!--PDF-->
         <scene sceneID="R43-9a-9X6">
             <objects>
-                <viewController storyboardIdentifier="CreatePDFViewController" id="caC-gf-dwy" customClass="CreatePDFViewController" customModule="Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreatePDFViewController" extendedLayoutIncludesOpaqueBars="YES" id="caC-gf-dwy" customClass="CreatePDFViewController" customModule="Scanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KvD-bi-kLk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ST-V3-HXC">
-                                <rect key="frame" x="15" y="148" width="384" height="644"/>
+                                <rect key="frame" x="15" y="0.0" width="384" height="737"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RxO-YX-KKR">
                                     <size key="itemSize" width="293" height="267"/>
@@ -37,8 +37,13 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Y5-6O-suI">
                                                     <rect key="frame" x="0.0" y="0.0" width="293" height="267"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygI-Dy-0cP">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygI-Dy-0cP">
                                                             <rect key="frame" x="0.0" y="0.0" width="293" height="267"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.5" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,72 +76,102 @@
                                 </cells>
                             </collectionView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient_new" translatesAutoresizingMaskIntoConstraints="NO" id="fhU-4A-2fT">
-                                <rect key="frame" x="0.0" y="148" width="414" height="10"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="xqv-Sq-gFv"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient_new" translatesAutoresizingMaskIntoConstraints="NO" id="81C-zT-gTT">
-                                <rect key="frame" x="0.0" y="782" width="414" height="10"/>
+                                <rect key="frame" x="0.0" y="727" width="414" height="10"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="fV3-fS-QjF"/>
                                     <constraint firstAttribute="height" constant="10" id="gk4-2W-mp2"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3y-Ro-vAz">
-                                <rect key="frame" x="15" y="807" width="384" height="40"/>
-                                <color key="backgroundColor" red="0.25098039215686274" green="0.62352941176470589" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="E6T-9a-UoV">
+                                <rect key="frame" x="15" y="752" width="384" height="95"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3y-Ro-vAz">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
+                                        <color key="backgroundColor" red="0.25098039215686274" green="0.62352941176470589" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="pt0-zv-wi9"/>
+                                        </constraints>
+                                        <state key="normal" title="Створити PDF">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbe-gl-ovI">
+                                        <rect key="frame" x="0.0" y="55" width="384" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ziy-pf-WAo"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.25098039215686274" green="0.62352941176470589" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Скасувати"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YA-fx-CNE">
+                                <rect key="frame" x="0.0" y="140" width="414" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Назва документа" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WmQ-uS-LvF">
+                                        <rect key="frame" x="15" y="15" width="384" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="pt0-zv-wi9"/>
+                                    <constraint firstAttribute="bottom" secondItem="WmQ-uS-LvF" secondAttribute="bottom" constant="15" id="IiO-3G-g5L"/>
+                                    <constraint firstItem="WmQ-uS-LvF" firstAttribute="leading" secondItem="4YA-fx-CNE" secondAttribute="leading" constant="15" id="OiN-su-tAK"/>
+                                    <constraint firstAttribute="trailing" secondItem="WmQ-uS-LvF" secondAttribute="trailing" constant="15" id="Plh-PJ-oDI"/>
+                                    <constraint firstItem="WmQ-uS-LvF" firstAttribute="top" secondItem="4YA-fx-CNE" secondAttribute="top" constant="15" id="d68-Mt-ilM"/>
                                 </constraints>
-                                <state key="normal" title="Створити PDF">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Назва документа" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WmQ-uS-LvF">
-                                <rect key="frame" x="15" y="103" width="384" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5ST-V3-HXC" firstAttribute="bottom" secondItem="81C-zT-gTT" secondAttribute="bottom" id="3UK-Us-MyR"/>
+                            <constraint firstItem="fhU-4A-2fT" firstAttribute="top" secondItem="4YA-fx-CNE" secondAttribute="bottom" id="8Qs-Yq-AVe"/>
+                            <constraint firstItem="ub2-kF-yWa" firstAttribute="trailing" secondItem="E6T-9a-UoV" secondAttribute="trailing" constant="15" id="8x7-hj-fm0"/>
                             <constraint firstItem="fhU-4A-2fT" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" id="Bpa-Kc-MZG"/>
                             <constraint firstItem="ub2-kF-yWa" firstAttribute="trailing" secondItem="5ST-V3-HXC" secondAttribute="trailing" constant="15" id="Icm-u5-BrY"/>
-                            <constraint firstItem="q3y-Ro-vAz" firstAttribute="top" secondItem="5ST-V3-HXC" secondAttribute="bottom" constant="15" id="O46-oo-TWD"/>
-                            <constraint firstItem="ub2-kF-yWa" firstAttribute="bottom" secondItem="q3y-Ro-vAz" secondAttribute="bottom" constant="15" id="QTC-zu-fd0"/>
-                            <constraint firstItem="ub2-kF-yWa" firstAttribute="trailing" secondItem="WmQ-uS-LvF" secondAttribute="trailing" constant="15" id="Uyj-oo-2xv"/>
-                            <constraint firstItem="WmQ-uS-LvF" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" constant="15" id="WuC-Y6-7d2"/>
+                            <constraint firstItem="ub2-kF-yWa" firstAttribute="bottom" secondItem="E6T-9a-UoV" secondAttribute="bottom" constant="15" id="TAa-s4-yzB"/>
+                            <constraint firstItem="4YA-fx-CNE" firstAttribute="top" secondItem="ub2-kF-yWa" secondAttribute="top" id="agj-Qx-4Yl"/>
                             <constraint firstItem="ub2-kF-yWa" firstAttribute="trailing" secondItem="fhU-4A-2fT" secondAttribute="trailing" id="cgd-Sh-KED"/>
-                            <constraint firstItem="ub2-kF-yWa" firstAttribute="trailing" secondItem="q3y-Ro-vAz" secondAttribute="trailing" constant="15" id="fmY-oh-6aB"/>
-                            <constraint firstItem="WmQ-uS-LvF" firstAttribute="top" secondItem="ub2-kF-yWa" secondAttribute="top" constant="15" id="qWL-jQ-a3F"/>
-                            <constraint firstItem="q3y-Ro-vAz" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" constant="15" id="rdl-KJ-tYC"/>
+                            <constraint firstItem="E6T-9a-UoV" firstAttribute="top" secondItem="5ST-V3-HXC" secondAttribute="bottom" constant="15" id="dXJ-mE-vxE"/>
+                            <constraint firstItem="4YA-fx-CNE" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" id="rNi-vj-P3M"/>
                             <constraint firstItem="81C-zT-gTT" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" id="uEh-72-X6g"/>
                             <constraint firstItem="5ST-V3-HXC" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" constant="15" id="vdt-Sn-t2k"/>
                             <constraint firstItem="81C-zT-gTT" firstAttribute="trailing" secondItem="ub2-kF-yWa" secondAttribute="trailing" id="vhT-Hp-oLB"/>
-                            <constraint firstItem="5ST-V3-HXC" firstAttribute="top" secondItem="WmQ-uS-LvF" secondAttribute="bottom" constant="15" id="xPv-uh-wxL"/>
-                            <constraint firstItem="fhU-4A-2fT" firstAttribute="top" secondItem="5ST-V3-HXC" secondAttribute="top" id="yc3-7K-GWY"/>
+                            <constraint firstItem="E6T-9a-UoV" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" constant="15" id="way-Mi-1YQ"/>
+                            <constraint firstItem="ub2-kF-yWa" firstAttribute="trailing" secondItem="4YA-fx-CNE" secondAttribute="trailing" id="xaX-D1-dJc"/>
+                            <constraint firstAttribute="top" secondItem="5ST-V3-HXC" secondAttribute="top" id="yc3-7K-GWY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ub2-kF-yWa"/>
                     </view>
-                    <navigationItem key="navigationItem" title="PDF" id="5tA-Ah-3tq">
-                        <barButtonItem key="leftBarButtonItem" title="Скасувати" id="eCy-L7-6ru"/>
+                    <navigationItem key="navigationItem" title="PDF" largeTitleDisplayMode="always" id="5tA-Ah-3tq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nv2-rT-9bi"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addBarButtonItem" destination="Nv2-rT-9bi" id="GFV-sc-8E0"/>
                         <outlet property="bottomGradientImageView" destination="81C-zT-gTT" id="K3N-9X-SDY"/>
-                        <outlet property="cancelBarButtonItem" destination="eCy-L7-6ru" id="hgL-aY-nWZ"/>
+                        <outlet property="cancelButton" destination="Tbe-gl-ovI" id="DPM-CV-HED"/>
                         <outlet property="collectionView" destination="5ST-V3-HXC" id="zkQ-eM-OFP"/>
                         <outlet property="createPDFButton" destination="q3y-Ro-vAz" id="deu-Ee-JF4"/>
                         <outlet property="nameTextField" destination="WmQ-uS-LvF" id="asE-ts-F5N"/>
+                        <outlet property="nameView" destination="4YA-fx-CNE" id="Ywe-AE-aTk"/>
+                        <outlet property="nameViewTopConstraint" destination="agj-Qx-4Yl" id="xtb-Sv-HM3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4a-zU-kHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -148,8 +183,8 @@
             <objects>
                 <navigationController storyboardIdentifier="CreatePDFNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="f6q-BH-2ae" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bi4-n0-n5Z">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Bi4-n0-n5Z">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

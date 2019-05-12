@@ -15,10 +15,12 @@ class CreatePDFViewController: BaseViewController {
     
     @IBOutlet weak var createPDFButton: UIButton!
     @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
-    @IBOutlet weak var cancelBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var bottomGradientImageView: UIImageView!
+    @IBOutlet weak var nameView: UIView!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var nameViewTopConstraint: NSLayoutConstraint!
 
     var viewModel: CreatePDFViewModel!
     
@@ -39,13 +41,24 @@ class CreatePDFViewController: BaseViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let topInset = nameView.frame.height + 10
+        collectionView.contentInset = UIEdgeInsets(top: topInset,
+                                              left: collectionView.contentInset.left,
+                                              bottom: 10,
+                                              right: collectionView.contentInset.right)
+    }
+    
     func setup(_ model: ImageScannerResults) {
         viewModel = CreatePDFViewModel(model: model)
     }
     
     private func configureView() {
         collectionView.delegate = self
-        collectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        collectionView.dragInteractionEnabled = true
+        cancelButton.layer.borderWidth = 1
+        cancelButton.layer.borderColor = #colorLiteral(red: 0.2509803922, green: 0.6235294118, blue: 1, alpha: 1)
         bottomGradientImageView.transform = CGAffineTransform(scaleX: 1, y: -1)
     }
     
@@ -55,12 +68,18 @@ class CreatePDFViewController: BaseViewController {
             .disposed(by: rx.bag)
     }
     
+    
     private func bindCollectionView() {
-        let dataSource = RxCollectionViewSectionedAnimatedDataSource<SimpleAnimatableSection<UIImage>>(configureCell: { (ds, cv, ip, model) -> UICollectionViewCell in
+        let animation = AnimationConfiguration(insertAnimation: .none, reloadAnimation: .fade, deleteAnimation: .none)
+        let dataSource = RxCollectionViewSectionedAnimatedDataSource<SimpleAnimatableSection<UIImage>>(animationConfiguration: animation, configureCell: { (ds, cv, ip, model) -> UICollectionViewCell in
             let cell = cv.dequeueReusableCell(PageCollectionViewCell.self, for: ip)
             cell.configureView(model)
             return cell
         })
+        
+        dataSource.canMoveItemAtIndexPath = { (_,_) in
+            return true
+        }
         
         viewModel.images
             .map { [SimpleAnimatableSection<UIImage>(items: $0)]}
@@ -93,7 +112,7 @@ class CreatePDFViewController: BaseViewController {
     }
     
     private func bindCancelButton() {
-        cancelBarButtonItem.rx.taps()
+        cancelButton.rx.taps()
             .onNext { [weak self] in
                 self?.presentCancelAlert()
             }.disposed(by: rx.bag)
@@ -139,3 +158,16 @@ extension CreatePDFViewController: ImageScannerControllerDelegate {
     }
     
 }
+
+extension CreatePDFViewController: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let nameViewHeight = nameView.frame.height
+        let topInset = abs(min(0, scrollView.contentOffset.y + scrollView.adjustedContentInset.top))
+        nameViewTopConstraint.constant = topInset
+        let scrollInsetTop = topInset + nameViewHeight
+        collectionView.scrollIndicatorInsets = UIEdgeInsets.init(top: scrollInsetTop,
+                                                             left: scrollView.scrollIndicatorInsets.left,
+                                                             bottom: scrollView.scrollIndicatorInsets.bottom,
+                                                             right: scrollView.scrollIndicatorInsets.right) }
+}
+

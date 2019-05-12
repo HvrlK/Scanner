@@ -16,6 +16,7 @@ class PDFListTableViewCell: UITableViewCell {}
 class PDFListViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyLabel: UILabel!
     
     private let viewModel = PDFListViewModel()
 
@@ -26,6 +27,7 @@ class PDFListViewController: BaseViewController {
         
         bindTableView()
         bindErrors()
+        bindState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +45,18 @@ class PDFListViewController: BaseViewController {
             .onNext { [weak self] _ in
                 self?.presentErrorAlert()
             }.disposed(by: rx.bag)
+    }
+    
+    private func bindState() {
+        viewModel.items
+            .map { $0.isEmpty ? CGFloat(0) : 1 }
+            .bind(to: tableView.rx.alpha)
+            .disposed(by: rx.bag)
+        
+        viewModel.items
+            .map { $0.isEmpty ? CGFloat(1) : 0 }
+            .bind(to: emptyLabel.rx.alpha)
+            .disposed(by: rx.bag)
     }
     
     private func bindTableView() {

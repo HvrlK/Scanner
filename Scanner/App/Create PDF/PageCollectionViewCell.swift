@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PageCollectionViewCell: UICollectionViewCell {
     
@@ -15,5 +17,4 @@ class PageCollectionViewCell: UICollectionViewCell {
     func configureView(_ model: UIImage) {
         imageView.image = model
     }
-    
 }
