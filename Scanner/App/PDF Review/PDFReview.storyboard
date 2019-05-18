@@ -18,16 +18,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kl4-dB-Rud" customClass="PDFView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient_new" translatesAutoresizingMaskIntoConstraints="NO" id="abr-fk-zWM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="ZeL-jW-FpA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="abr-fk-zWM" firstAttribute="leading" secondItem="Wm7-7W-4JG" secondAttribute="leading" id="6K7-u5-vZr"/>
+                            <constraint firstItem="abr-fk-zWM" firstAttribute="top" secondItem="Wm7-7W-4JG" secondAttribute="top" id="AJV-bD-6rA"/>
                             <constraint firstItem="kl4-dB-Rud" firstAttribute="top" secondItem="Wm7-7W-4JG" secondAttribute="top" id="AZP-mP-SCE"/>
-                            <constraint firstItem="Wm7-7W-4JG" firstAttribute="bottom" secondItem="kl4-dB-Rud" secondAttribute="bottom" id="Gmn-Vt-J9H"/>
+                            <constraint firstAttribute="bottom" secondItem="kl4-dB-Rud" secondAttribute="bottom" id="Gmn-Vt-J9H"/>
                             <constraint firstItem="Wm7-7W-4JG" firstAttribute="trailing" secondItem="kl4-dB-Rud" secondAttribute="trailing" id="Xcg-Ma-RS5"/>
                             <constraint firstItem="kl4-dB-Rud" firstAttribute="leading" secondItem="Wm7-7W-4JG" secondAttribute="leading" id="ke2-ii-sF3"/>
+                            <constraint firstItem="abr-fk-zWM" firstAttribute="trailing" secondItem="Wm7-7W-4JG" secondAttribute="trailing" id="ld0-gr-jJ9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wm7-7W-4JG"/>
                     </view>
@@ -64,4 +73,7 @@
             <point key="canvasLocation" x="163.768115942029" y="174.77678571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gradient_new" width="375" height="15"/>
+    </resources>
 </document>

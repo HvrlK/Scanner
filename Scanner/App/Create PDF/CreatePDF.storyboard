@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ST-V3-HXC">
-                                <rect key="frame" x="15" y="0.0" width="384" height="737"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="737"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RxO-YX-KKR">
                                     <size key="itemSize" width="293" height="267"/>
@@ -28,7 +28,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PageCollectionViewCell" id="jk8-B7-CE7" customClass="PageCollectionViewCell" customModule="Scanner" customModuleProvider="target">
-                                        <rect key="frame" x="45.5" y="0.0" width="293" height="267"/>
+                                        <rect key="frame" x="60.5" y="0.0" width="293" height="267"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="293" height="267"/>
@@ -45,12 +45,22 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgG-Do-N8u">
+                                                            <rect key="frame" x="249" y="0.0" width="44" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="YYo-Df-WjJ"/>
+                                                                <constraint firstAttribute="height" constant="44" id="lF4-U1-nLh"/>
+                                                            </constraints>
+                                                            <state key="normal" image="deleteIcon"/>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.5" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="ygI-Dy-0cP" firstAttribute="top" secondItem="5Y5-6O-suI" secondAttribute="top" id="19c-BD-nkT"/>
                                                         <constraint firstItem="ygI-Dy-0cP" firstAttribute="centerY" secondItem="5Y5-6O-suI" secondAttribute="centerY" id="3Ol-3x-8GD"/>
+                                                        <constraint firstAttribute="trailing" secondItem="DgG-Do-N8u" secondAttribute="trailing" id="agh-hR-8ZG"/>
                                                         <constraint firstItem="ygI-Dy-0cP" firstAttribute="leading" secondItem="5Y5-6O-suI" secondAttribute="leading" id="bYj-hu-sih"/>
+                                                        <constraint firstItem="DgG-Do-N8u" firstAttribute="top" secondItem="5Y5-6O-suI" secondAttribute="top" id="hS8-8i-JiW"/>
                                                         <constraint firstAttribute="bottom" secondItem="ygI-Dy-0cP" secondAttribute="bottom" id="lMN-cz-haC"/>
                                                         <constraint firstItem="ygI-Dy-0cP" firstAttribute="centerX" secondItem="5Y5-6O-suI" secondAttribute="centerX" id="oPv-Cg-lha"/>
                                                         <constraint firstAttribute="trailing" secondItem="ygI-Dy-0cP" secondAttribute="trailing" id="per-Mm-ypj"/>
@@ -70,6 +80,7 @@
                                             <constraint firstItem="5Y5-6O-suI" firstAttribute="top" secondItem="jk8-B7-CE7" secondAttribute="top" id="oYN-C9-K6A"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="deleteButton" destination="DgG-Do-N8u" id="9dy-w0-MOB"/>
                                             <outlet property="imageView" destination="ygI-Dy-0cP" id="R5c-2t-TbD"/>
                                         </connections>
                                     </collectionViewCell>
@@ -145,14 +156,14 @@
                             <constraint firstItem="fhU-4A-2fT" firstAttribute="top" secondItem="4YA-fx-CNE" secondAttribute="bottom" id="8Qs-Yq-AVe"/>
                             <constraint firstItem="ub2-kF-yWa" firstAttribute="trailing" secondItem="E6T-9a-UoV" secondAttribute="trailing" constant="15" id="8x7-hj-fm0"/>
                             <constraint firstItem="fhU-4A-2fT" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" id="Bpa-Kc-MZG"/>
-                            <constraint firstItem="ub2-kF-yWa" firstAttribute="trailing" secondItem="5ST-V3-HXC" secondAttribute="trailing" constant="15" id="Icm-u5-BrY"/>
+                            <constraint firstItem="ub2-kF-yWa" firstAttribute="trailing" secondItem="5ST-V3-HXC" secondAttribute="trailing" id="Icm-u5-BrY"/>
                             <constraint firstItem="ub2-kF-yWa" firstAttribute="bottom" secondItem="E6T-9a-UoV" secondAttribute="bottom" constant="15" id="TAa-s4-yzB"/>
                             <constraint firstItem="4YA-fx-CNE" firstAttribute="top" secondItem="ub2-kF-yWa" secondAttribute="top" id="agj-Qx-4Yl"/>
                             <constraint firstItem="ub2-kF-yWa" firstAttribute="trailing" secondItem="fhU-4A-2fT" secondAttribute="trailing" id="cgd-Sh-KED"/>
                             <constraint firstItem="E6T-9a-UoV" firstAttribute="top" secondItem="5ST-V3-HXC" secondAttribute="bottom" constant="15" id="dXJ-mE-vxE"/>
                             <constraint firstItem="4YA-fx-CNE" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" id="rNi-vj-P3M"/>
                             <constraint firstItem="81C-zT-gTT" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" id="uEh-72-X6g"/>
-                            <constraint firstItem="5ST-V3-HXC" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" constant="15" id="vdt-Sn-t2k"/>
+                            <constraint firstItem="5ST-V3-HXC" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" id="vdt-Sn-t2k"/>
                             <constraint firstItem="81C-zT-gTT" firstAttribute="trailing" secondItem="ub2-kF-yWa" secondAttribute="trailing" id="vhT-Hp-oLB"/>
                             <constraint firstItem="E6T-9a-UoV" firstAttribute="leading" secondItem="ub2-kF-yWa" secondAttribute="leading" constant="15" id="way-Mi-1YQ"/>
                             <constraint firstItem="ub2-kF-yWa" firstAttribute="trailing" secondItem="4YA-fx-CNE" secondAttribute="trailing" id="xaX-D1-dJc"/>
@@ -161,6 +172,7 @@
                         <viewLayoutGuide key="safeArea" id="ub2-kF-yWa"/>
                     </view>
                     <navigationItem key="navigationItem" title="PDF" largeTitleDisplayMode="always" id="5tA-Ah-3tq">
+                        <barButtonItem key="leftBarButtonItem" title="Редагувати" id="nbT-2p-A3g"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nv2-rT-9bi"/>
                     </navigationItem>
                     <connections>
@@ -169,6 +181,7 @@
                         <outlet property="cancelButton" destination="Tbe-gl-ovI" id="DPM-CV-HED"/>
                         <outlet property="collectionView" destination="5ST-V3-HXC" id="zkQ-eM-OFP"/>
                         <outlet property="createPDFButton" destination="q3y-Ro-vAz" id="deu-Ee-JF4"/>
+                        <outlet property="editBarButtonItem" destination="nbT-2p-A3g" id="JuE-DY-Q5Y"/>
                         <outlet property="nameTextField" destination="WmQ-uS-LvF" id="asE-ts-F5N"/>
                         <outlet property="nameView" destination="4YA-fx-CNE" id="Ywe-AE-aTk"/>
                         <outlet property="nameViewTopConstraint" destination="agj-Qx-4Yl" id="xtb-Sv-HM3"/>
@@ -198,6 +211,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="deleteIcon" width="24" height="24"/>
         <image name="gradient_new" width="375" height="15"/>
     </resources>
 </document>

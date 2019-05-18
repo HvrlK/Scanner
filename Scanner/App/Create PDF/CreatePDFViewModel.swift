@@ -18,7 +18,7 @@ class CreatePDFViewModel: ViewModel {
     private(set) lazy var actionCreate = Action<Void, String> { [weak self] _ in
         guard let self = self else { return .empty() }
         let pdfDocument = PDFDocument()
-        let images = self.images.value
+        let images = self.images
         for index in images.indices {
             if let page = PDFPage(image: images[index]) {
                 pdfDocument.insert(page, at: index)
@@ -42,11 +42,11 @@ class CreatePDFViewModel: ViewModel {
     }
     
     let nameOfDocument = BehaviorRelay<String>(value: "")
-    let images: BehaviorRelay<[UIImage]>
+    var images: [UIImage]
     
     init(model: ImageScannerResults) {
         let image = model.doesUserPreferEnhancedImage ? (model.enhancedImage ?? model.scannedImage) : model.scannedImage
-        self.images = BehaviorRelay(value: [image])
+        self.images = [image]
         super.init()
     }
     
