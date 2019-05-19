@@ -36,6 +36,7 @@ class PDFListViewController: BaseViewController {
     }
     
     private func configureView() {
+        navigationController?.navigationBar.shadowImage = #imageLiteral(resourceName: "gradient_new")
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.delegate = self
     }
